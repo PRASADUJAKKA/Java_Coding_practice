@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      
+      int[] arr = {56,86,2,67,98,9,10};
+      
+      System.out.println("Original String: "+Arrays.toString(arr));
+      
+      int left = 0;
+      int right = arr.length-1;
+      
+      while(left<right){
+        
+        int temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
+        
+        left++;
+        right--;
+        
+      }
+      System.out.println("Reversed String: "+Arrays.toString(arr));
+  }
+}
