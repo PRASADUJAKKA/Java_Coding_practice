@@ -1,0 +1,38 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Hello, World!");
+      String ss = "A young woman called as Young Lady";
+      String news = "";
+      int found = 0;
+      
+      System.out.println(ss);
+      
+      for(int i=0;i<ss.length();i++){
+        news += ss.charAt(i);
+        if(ss.charAt(i) == ' '){
+          found ++;
+          if(found==1){
+          news = news.substring(0,news.length()-1);
+          }
+          for(int j=news.length()-1;j>=0;j--){
+            System.out.print(news.charAt(j));
+          }
+          news = "";
+        }
+      }
+      for(int j=news.length()-1;j>=0;j--){
+            
+            if(j==news.length()-1){
+              System.out.print(" ");
+            }
+            System.out.print(news.charAt(j));
+          }
+      
+      System.out.println("");
+      for(int i=ss.length()-1;i>=0;i--){
+        System.out.print(ss.charAt(i));
+      }
+  }
+}
