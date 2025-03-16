@@ -1,0 +1,48 @@
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
+    
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Hello, World!");
+      String str = "aqeqwqeqwwqwq2243535dfdfff";
+      Map<Character,Integer> hashmap = new HashMap<>();
+      for(char ch: str.toCharArray()){
+        Integer num = hashmap.get(ch);
+        if(num==null){
+          hashmap.put(ch, 1);
+          
+        }
+        else{
+          hashmap.put(ch, num+1);
+        }
+      }
+      
+      //print the each character count in String
+      System.out.println(hashmap);
+      
+      List<Entry<Character, Integer>> result = hashmap.entrySet()
+                .stream()
+                .collect(Collectors.groupingBy(e -> e.getValue()))
+                .entrySet()
+                .stream()
+                .sorted(Collections.reverseOrder(Map.Entry.comparingByKey()))
+                .skip(1)
+                .findFirst()
+                .get()
+                .getValue();
+
+        //print the Max Count character in String
+        System.out.println(result);
+        
+
+Map<Character, Integer> sortedMap = 
+     hashmap.entrySet().stream()
+    .sorted(Entry.comparingByValue())
+    .collect(Collectors.toMap(Entry::getKey, Entry::getValue,
+                              (e1, e2) -> e1, LinkedHashMap::new));
+        
+        //print the each character count in Ascending order in String                      
+        System.out.println(sortedMap);
+}}
+   
