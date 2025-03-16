@@ -1,0 +1,19 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+    String str = "Once Upon a time there lived a ghost"; 
+    Map<String, Integer> hashmap = new HashMap<>();
+    String[] strArray = str.split(" ");
+    for (String word: strArray) {
+     Integer integer = hashmap.get(word);
+    if(integer == null) {
+      hashmap.put(word, 1); 
+    }
+    else{
+      hashmap.put(word, integer+1);
+     }
+    }
+System.out.println(hashmap);
+   }
+  }
