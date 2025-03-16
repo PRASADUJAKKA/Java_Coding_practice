@@ -1,0 +1,37 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      
+      int[] arr = {1,2,3,2,1};
+      
+      int[] arr2 = new int[arr.length];
+      
+      System.arraycopy(arr,0,arr2,0,arr.length);
+      
+      System.out.println("Original Array: "+Arrays.toString(arr));
+      
+      int left = 0;
+      int right = arr.length-1;
+      
+      while(left<right){
+        
+        int temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
+        
+        left++;
+        right--;
+        
+      }
+      System.out.println("Reversed Array: "+Arrays.toString(arr));
+      
+      if(Arrays.equals(arr,arr2)){
+        System.out.println("It is Palindrome");
+      }
+      
+      else{
+        System.out.println("It is not Palindrome");
+      }
+  }
+}
