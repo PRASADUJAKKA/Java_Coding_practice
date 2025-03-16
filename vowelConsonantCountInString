@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      
+      String ss = "prasadu";
+      
+      int vowelCount=0;
+      int consonantCount=0;
+      
+      for(int i=0;i<ss.length();i++){
+        if((ss.charAt(i) == 'a') || (ss.charAt(i) == 'e') || (ss.charAt(i) == 'i') || (ss.charAt(i) == 'o')
+         || (ss.charAt(i) == 'u') || (ss.charAt(i) == 'A') || (ss.charAt(i) == 'E') || (ss.charAt(i) == 'I')
+         || (ss.charAt(i) == 'O') || (ss.charAt(i) == 'U')){
+          vowelCount++;
+        }
+        else{
+          consonantCount++;
+        }
+      }
+      
+      System.out.println("Vowel Count is "+ vowelCount);
+      System.out.println("Consonant Count is "+ consonantCount);
+  }
+}
