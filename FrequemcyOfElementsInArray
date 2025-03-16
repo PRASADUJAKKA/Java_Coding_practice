@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      
+      int[] arr = {1,2,4,5,4,8,5,3,5};
+      
+      int len =  arr.length;
+      
+      boolean[] foundBoolean = new boolean[len];
+      Arrays.fill(foundBoolean,false);
+       
+      for(int i=0;i<len;i++){
+        if(foundBoolean[i]==true)
+        continue;
+        
+      int cnt = 1;  
+      for(int j=i+1;j<len;j++){
+        if(arr[i]==arr[j]){
+          cnt++;
+          foundBoolean[j]=true;
+        }
+      }
+      System.out.println("Array Element "+arr[i]+" occured "+ cnt + " times");
+    }
+      
+  }
+}
