@@ -1,0 +1,24 @@
+package JSONpractice;
+
+import org.json.JSONArray;
+
+public class getJSONoBJKeys {
+
+ public static void main(String[] args) {
+
+  JSONArray jsonArray = new JSONArray(
+    "[{'first':{'name':'Prasad','id':'5'}},{'first':{'id':'7','name':'Prasad2'}}]");
+
+  JSONArray jsonArray2 = new JSONArray("[{'name':'Prasad','id':'1147150'},{'id':'535099','name':'Prasad2'}]");
+
+  for (int i = 0; i < jsonArray.length(); i++) {
+   System.out.println(jsonArray.getJSONObject(i).getJSONObject("first").get("name"));
+  }
+
+  for (int i = 0; i < jsonArray2.length(); i++) {
+   System.out.println(jsonArray2.getJSONObject(i).get("id"));
+  }
+
+ }
+
+}
