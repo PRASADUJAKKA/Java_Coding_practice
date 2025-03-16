@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      
+      String ss = "madam";
+      String rev = "";
+      for(int i=ss.length()-1;i>=0;i--){
+        rev += ss.charAt(i);
+      }
+      
+      System.out.println("Original String: "+ss);
+      System.out.println("Reversed String: "+rev);
+      
+      if(ss.equals(rev)){
+        System.out.println("String is Palindrome");
+      }
+      
+      else{
+        System.out.println("String is not palindrome");
+      }
+  }
+}
