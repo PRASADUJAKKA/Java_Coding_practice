@@ -1,0 +1,24 @@
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
+    
+public class Main {
+    public static void main(String[] args) {
+      String ss = "123rgfrg256h567";
+      String strArray[] = ss.split("[^0-9]");
+      System.out.println(Arrays.toString(strArray));
+      
+      int sum = 0;
+      
+      for(String key: strArray){
+        if(!key.isBlank()){
+          sum += Integer.parseInt(key);
+        }
+      }
+      System.out.println(sum);
+  }
+}
+
+// === Code Execution Successful ===
+// [123, , , , , 256, 567]
+// 946  
