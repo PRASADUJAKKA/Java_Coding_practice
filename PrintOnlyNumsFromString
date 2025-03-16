@@ -1,0 +1,19 @@
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
+    
+public class Main {
+    public static void main(String[] args) {
+      String ss = "123rgfrg256h567";
+      String nums="";
+      int sum = 0;
+      for(char ch: ss.toCharArray()){
+        if(Character.isDigit(ch)){
+          nums += Character.toString(ch);
+          sum += Integer.parseInt(Character.toString(ch));
+        }
+      }
+      System.out.println(nums);
+      System.out.println(sum);
+  }
+}
