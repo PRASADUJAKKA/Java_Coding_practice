@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Hello, World!");
+      
+      int[][] arr1 = {{1,2,9},
+                      {2,3,4},
+                      {4,5,6}
+                     };
+                     
+      
+      int dsum = 0;
+      int dsum2 = 0;
+      
+     for (int i=0,j=0 ; i<arr1.length && j<arr1.length ; i++, j++) {
+                  dsum += arr1[i][j];
+                  
+      }
+      
+      for (int i=0,j=arr1.length-1 ; i<arr1.length && j>=0 ; i++, j--) {
+                  dsum2 += arr1[i][j];
+                  
+      }
+      
+      System.out.println("Primary Diagonal sum: "+dsum);
+      System.out.println("Secondary Diagonal sum: "+dsum2);
+  }
+}
