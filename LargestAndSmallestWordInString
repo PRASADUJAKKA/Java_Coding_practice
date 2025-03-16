@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      
+      String str = "Once upon a time there live a cheetah which is dominant in the forest";
+        String[] words = str.split(" ");
+        System.out.println(Arrays.toString(words));
+        
+        String s_long = words[0];
+        String s_small = words[0];
+        
+        for(int i=0; i < words.length; i++){
+            if(words[i].length() > s_long.length()){
+                s_long = words[i];
+            }
+        }
+        for(int i=0; i<words.length; i++){
+            if(words[i].length() < s_small.length()){
+                s_small = words[i];
+            }
+        }
+
+        System.out.println("Longest word is: "+s_long);
+        System.out.println("Smallest word is: "+s_small);
+    }
+}
