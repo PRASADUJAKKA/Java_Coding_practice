@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Hello, World!");
+      
+      int range= 5;
+      int sum = 0;
+      int sum2 = 0;
+      
+      for(int i=1;i<=range;i++){
+        sum += i;
+      }
+      
+      System.out.println(sum);
+      
+    //maths formula
+    sum2 += (range*(range+1))/2;
+    System.out.println(sum2);
+    }
+}
