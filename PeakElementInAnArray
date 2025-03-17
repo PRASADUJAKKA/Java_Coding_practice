@@ -1,0 +1,20 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Hello, World!");
+      
+      int[] arr1 = {10, 20, 15, 2, 23, 90, 80};
+      
+      System.out.println(Arrays.toString(arr1));
+      
+      int peakElement = 0;
+      
+      for (int i = 1, j = i + 1; i < arr1.length && j < arr1.length; i++, j++) {
+          if(arr1[i]>arr1[j] && arr1[i]>arr1[i-1]){
+            peakElement = arr1[i];
+            System.out.println("Peak Element is: "+ peakElement+ " and its index is: "+i);
+          }
+        }
+      }
+}
