@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Hello, World!");
+      
+      String s1 = "silent";
+      String s2 = "listen";
+      
+      char[] charArr1 = s1.toCharArray();
+      char[] charArr2 = s2.toCharArray();
+      
+      if(s1.length() == s2.length()){
+        
+        Arrays.sort(charArr1);
+        Arrays.sort(charArr2);
+        
+        if(Arrays.equals(charArr1,charArr2)){
+        System.out.println("String are Anagrams");
+        }
+      }
+      else{
+        System.out.println("String are not Anagrams");
+      }
+      
+      
+    }
+}
