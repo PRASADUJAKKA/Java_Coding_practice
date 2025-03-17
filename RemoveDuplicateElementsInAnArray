@@ -1,0 +1,38 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Hello, World!");
+      
+      int[] arr = {1,2,3,4,6,2,1,2,3,3,4,6,6,9};
+      
+      System.out.println(Arrays.toString(arr));
+      
+      boolean[] found = new boolean[arr.length];
+      Arrays.fill(found,false);
+      
+      for(int i=0;i<arr.length;i++){
+          if(found[i] == true)
+          continue;
+          
+          for(int j=i+1;j<arr.length;j++){
+             if(arr[i] == arr[j]){
+               found[j] = true;
+             }
+        }
+        if(found[i] == false){
+          System.out.print(arr[i]+" ");
+        }
+      }
+      
+      System.out.println();
+      System.out.println(Arrays.toString(found));
+      
+      //Using hashset
+      Set<Integer> ss = new HashSet<Integer>();
+      for(int i=0;i<arr.length;i++){
+        ss.add(arr[i]);
+      }
+      System.out.println(ss);
+    }
+}
