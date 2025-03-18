@@ -1,0 +1,32 @@
+import java.util.*;
+
+public  class Main {
+    static int countOfTheElements = 2;
+    static int[] arr = {10,20};
+         
+    
+    public static void main(String[] args) {
+      System.out.println("Hello, World!");
+ 
+     
+    // New array should be created
+    // when arr.length = capacity
+    if (arr.length == countOfTheElements) {
+      int[] narr = new int[2 * countOfTheElements];
+      initi(narr);
+      arr = narr;
+    }
+    // Here we assign the new array to the original array
+    
+  
+  System.out.println(Arrays.toString(arr));
+  }
+  
+  public static void initi(int[] narr){
+       
+    // Copying the contents of previous array to the new array
+    for (int i = 0; i < countOfTheElements; i++) {
+      narr[i] = arr[i];
+    }
+     }
+}
