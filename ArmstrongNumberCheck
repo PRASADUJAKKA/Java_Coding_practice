@@ -1,21 +1,27 @@
-// Java program to check whether the number is Armstrong number or not
 import java.util.*;
 
-public class GfG {
-    static String armstrong(int n) {
-        String number = Integer.toString(n);
+public class Main {
+  
+  public static boolean isArmstrong(int number) {
+        int originalNumber = number;
+        int sum = 0;
+        int numberOfDigits = String.valueOf(number).length();
 
-        int length = number.length();
-        long output = 0;
-        for (char i : number.toCharArray())
-            output += (long)Math.pow(i - '0', length);
-
-        return output == n ? "True" : "False";
+        while (number > 0) {
+            int digit = number % 10;
+            sum += Math.pow(digit, numberOfDigits);
+            number /= 10;
+        }
+        return sum == originalNumber;
     }
-
-    // Driver Code
+    
     public static void main(String[] args) {
-        System.out.println(armstrong(153));
-        System.out.println(armstrong(1253));
-    }
+      int number= 153;
+      if (isArmstrong(number)) {
+            System.out.println(number + " is an Armstrong number.");
+        } else {
+            System.out.println(number + " is not an Armstrong number.");
+        }
+     
+  }
 }
