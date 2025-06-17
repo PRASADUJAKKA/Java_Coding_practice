@@ -1,0 +1,49 @@
+import java.util.*;
+
+public class RemoveSecondHighest {
+
+    public static void main(String[] args) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(1, 10);
+        map.put(2, 20);
+        map.put(3, 30);
+        map.put(4, 25);
+        map.put(5, 15);
+
+        removeSecondHighest(map);
+
+        System.out.println("HashMap after removing second highest value: " + map);
+    }
+
+    public static void removeSecondHighest(HashMap<Integer, Integer> map) {
+        if (map == null || map.size() < 2) {
+            return; // Cannot remove second highest if map is null or has less than 2 elements
+        }
+
+        // Convert values to a list and sort
+        List<Integer> valuesList = new ArrayList<>(map.values());
+        Collections.sort(valuesList, Collections.reverseOrder());
+
+        // Identify the second highest value (handling duplicates)
+        int secondHighest = -1;
+        if(valuesList.size() >= 2) {
+            for (int i = 1; i < valuesList.size(); i++) {
+                if (!valuesList.get(i).equals(valuesList.get(0))) {
+                    secondHighest = valuesList.get(i);
+                    break;
+                }
+            }
+        }
+        if (secondHighest == -1) {
+            return; // If second highest doesn't exist after handling duplicates, exit
+        }
+
+        // Find and remove the entry with the second highest value
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue().equals(secondHighest)) {
+                map.remove(entry.getKey());
+                break; // Remove only one instance
+            }
+        }
+    }
+}
